@@ -1,0 +1,8 @@
+#include <ctime>
+
+void logSecurity(const std::string& msg) {
+    std::ofstream out("logs/server.log", std::ios::app);
+
+    std::time_t now = std::time(nullptr);
+    out << std::ctime(&now) << " " << msg << std::endl;
+}
